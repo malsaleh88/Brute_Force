@@ -50,9 +50,27 @@ hydra -l administrator -P /usr/share/wordlists/rockyou.txt -t 4 192.168.1.53 ssh
    
 ---
 
-## **✅ Conclusion**
-- **Brute force attack executed & detected** in Windows logs.
-- **Logs successfully uploaded & analyzed in Splunk Cloud.**
+# 🔍 SSH Security Investigation Report
+
+## Incident Summary
+On **February 15, 2025**, multiple failed SSH login attempts were detected on the system. These attempts originated from an unknown source and failed due to incorrect credentials and disabled accounts.
+
+## Key Findings
+- **Failed SSH logins detected** (`Event ID: 4625`).
+- **Unknown user accounts used** (e.g., `FakeUser`).
+- **Logon Type: 3 (Network) & 8 (Explicit Credentials) detected**.
+- **Unable to determine source IP** because the attempts originated from **localhost (127.0.0.1)**.
+
+## Conclusion
+Since the login attempts came from `localhost`, no external IP address could be identified. Further monitoring and security enhancements have been implemented.
+
+## Next Steps
+- Enforce key-based authentication.
+- Restrict SSH access to trusted users.
+- Monitor security logs for future attempts.
+
+---
+📌 *This report documents the investigation and steps taken to improve SSH security.*  
 
 🚀 Lab completed!
 
